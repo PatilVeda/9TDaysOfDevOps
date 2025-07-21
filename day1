@@ -1,0 +1,22 @@
+What is devops?
+DevOps is the combination of cultural philosophies, practices, and tools that increases an organization’s ability to deliver applications and services at high velocity: evolving and improving products at a faster pace than organizations using traditional software development and infrastructure management processes
+
+
+How DevOps Works?
+Under a DevOps model, development and operations teams are no longer “siloed.” Sometimes, these two teams are merged into a single team where the engineers work across the entire application lifecycle, from development and test to deployment to operations, and develop a range of skills not limited to a single function.
+
+
+
+What is Automation, Scaling, Infrastructure ?
+Automation :-
+Automation is a critical component of DevOps. It involves automating the entire software delivery process, from code creation to testing, deployment, and monitoring. Automation enables teams to eliminate manual tasks, reduce errors, and deliver software faster.
+
+Scaling :-
+Scaling is another critical component of DevOps. It involves designing and implementing systems that can handle increased load and traffic. Scaling enables teams to deliver software that can handle a high volume of users and traffic.
+
+Infrastructure :-
+Infrastructure is a key component of DevOps. It involves designing and managing the hardware and software required to run applications and services. Infrastructure can be physical, such as servers and networks, or virtual, such as cloud-based servers and networks.
+
+
+Why devops is important?
+Devops connects the gap between development and operations, enabling teams to streamline workflows, improve collaboration, and accelerate innovation.
