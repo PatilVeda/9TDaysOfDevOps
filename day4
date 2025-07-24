@@ -1,0 +1,59 @@
+Day 4 Task: Basic Linux Shell Scripting for DevOps Engineers
+
+
+
+Tasks:
+
+Explain in your own words and with examples what Shell Scripting means for DevOps.
+What is #!/bin/bash? Can we write #!/bin/sh as well?
+Write a Shell Script that prints I will complete #90DaysOfDevOps challenge.
+Write a Shell Script that takes user input, input from arguments, and prints the variables.
+Provide an example of an If-Else statement in Shell Scripting by comparing two numbers
+
+#!/bin/bash
+
+#this is simple file for learning
+
+read -p "Enter your name: " name
+
+#taking input from arguments
+arg1=$1
+arg2=$2
+#printing variables
+echo "user input: $name"
+echo "argument: $agr1, $arg2"
+
+
+Enter your name: vedant
+user input: vedant
+argument: ,
+
+
+
+
+
+
+
+
+#!/bin/bash
+
+
+#this is simple file for learning
+
+
+num1=10
+num2=20
+
+
+if [ $num1 -gt $num2 ];
+then
+        echo "$num1 is greater than $num2"
+elif [ $num1 -lt $num2 ];
+then
+        echo "$num1 is less than $num2"
+else
+        echo "$num1 is equal to $num2"
+
+fi
+
+10 is less than 20
