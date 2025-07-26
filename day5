@@ -1,0 +1,52 @@
+🧰 Day 5 Commands – Advanced Shell Scripting & User Management
+📁 Directory Creation Using Sequence
+
+mkdir day{1..90}
+Creates directories day1 to day90 in seconds.
+
+📝 Dynamic Directory Creation Script
+Example script: createDirectories.sh
+
+#!/bin/bash
+for i in $(seq $2 $3); do
+  mkdir "$1$i"
+done
+
+
+
+./createDirectories.sh day 1 90
+🔁 Loop Example
+
+for i in {1..10}; do echo $i; done
+🔒 User Management
+Create users:
+
+
+sudo useradd user1
+sudo useradd user2
+Check all users:
+
+cut -d: -f1 /etc/passwd
+💾 Backup Script Basics
+Create a backup:
+
+
+tar -czvf backup_$(date +%F).tar.gz /path/to/your/work
+Backup script example:
+
+
+
+#!/bin/bash
+tar -czvf backup_$(date +%F).tar.gz /home/yourname/projects
+⏱️ Cron & Crontab
+Open crontab:
+
+
+crontab -e
+Run backup daily at 1 AM:
+
+
+0 1 * * * /path/to/backup.sh
+
+
+These commands are vital in automating DevOps tasks, managing users securely, and maintaining reliable backup processes.
