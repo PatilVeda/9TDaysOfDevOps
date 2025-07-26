@@ -1,0 +1,115 @@
+# Today is more on Reading, Learning, and Implementing File Permissions
+# The concept of Linux file permission and ownership is important in Linux. Today, we will work on Linux permissions and ownership, and perform tasks related to both.
+
+# Tasks
+# Understanding File Permissions:
+
+# Create a simple file and run ls -ltr to see the details of the files. Refer to Notes
+# Each of the three permissions are assigned to three defined categories of users. The categories are:
+# Owner: The owner of the file or application.
+# Use chown to change the ownership permission of a file or directory.
+# Group: The group that owns the file or application.
+# Use chgrp to change the group permission of a file or directory.
+# Others: All users with access to the system (outside the users in a group).
+# Use chmod to change the other users' permissions of a file or directory.
+# Task: Change the user permissions of the file and note the changes after running ls -ltr.
+# Writing an Article:
+
+
+# Access Control Lists (ACL):
+
+# Read about ACL and try out the commands getfacl and setfacl.
+# Task: Create a directory and set specific ACL permissions for different users and groups. Verify the permissions using getfacl.
+# Additional Tasks:
+
+# Task: Create a script that changes the permissions of multiple files in a directory based on user input.
+# Task: Write a script that sets ACL permissions for a user on a given file, based on user input.
+# Understanding Sticky Bit, SUID, and SGID:
+
+# Read about sticky bit, SUID, and SGID.
+# Task: Create examples demonstrating the use of sticky bit, SUID, and SGID, and explain their significance.
+# Backup and Restore Permissions:
+
+# Task: Create a script that backs up the current permissions of files in a directory to a file.
+# Task: Create another script that restores the permissions from the backup file.
+# In case of any doubts, post them on the Discord Community.
+
+
+
+
+
+🛡️ Day 6 Commands – File Permissions, ACL, Sticky Bit, SUID, SGID
+🔍 ls -l or ls -ltr
+Use Case: View file permissions, ownership, and timestamps in detail.
+
+
+ls -ltr file.txt
+👤 chmod (Change File Permissions)
+Use Case: Modify read (r), write (w), and execute (x) permissions for user (u), group (g), and others (o).
+
+
+chmod 755 script.sh   # rwxr-xr-x
+chmod u+x filename    # Add execute permission to the owner
+chmod o-r file.txt    # Remove read permission for others
+🔧 chown (Change Owner)
+Use Case: Change file/directory ownership.
+
+
+chown username file.txt
+👥 chgrp (Change Group Ownership)
+Use Case: Change the group associated with a file or folder.
+
+
+chgrp devteam file.txt
+📑 getfacl (Get ACL – Access Control List)
+Use Case: Display ACL permissions for a file or directory.
+
+
+getfacl file.txt
+✍️ setfacl (Set ACL – Access Control List)
+Use Case: Set specific read/write/execute permissions for users/groups.
+
+
+setfacl -m u:john:r file.txt     # Give user 'john' read access
+setfacl -m g:devs:rw file.txt    # Give group 'devs' read & write access
+🗃️ Sticky Bit, SUID, SGID
+📌 Sticky Bit
+Use Case: Prevent users from deleting others’ files in a shared directory.
+
+
+chmod +t /sharedfolder
+🧍 SUID (Set User ID)
+Use Case: Execute a file with the permissions of the file owner.
+
+
+chmod u+s filename
+👥 SGID (Set Group ID)
+Use Case: Files created in a directory inherit its group.
+
+
+chmod g+s /foldername
+💾 Backup File Permissions
+Backup permissions to a file:
+
+
+getfacl * > permissions_backup.txt
+Restore permissions from backup:
+
+
+setfacl --restore=permissions_backup.txt
+🧰 Bonus Script: Bulk Permission Changer
+Example:
+
+
+
+
+#!/bin/bash
+for file in *.sh; do
+  chmod 755 "$file"
+done
+✅ Summary: Why These Are Important
+Helps in securing systems by tightly controlling file access.
+
+Useful in multi-user environments to set custom access rules.
+
+Essential for auditing, backup, and automation in any DevOps role.
